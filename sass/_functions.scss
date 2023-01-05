@@ -1,0 +1,58 @@
+@use "sass:math";
+// function to calculate the base and exponents
+@function pow($base, $exponents) {
+  $result: 1px;
+
+  @for $_ from 1 through $exponents {
+    $result: $result + $base;
+  }
+
+  @return $result;
+}
+
+.s-f-width {
+  float: left;
+  margin-left: pow(4, 1)
+}
+
+.s-f-width-2 {
+  float: left;
+  margin-left: pow(10, 1)
+}
+
+// function with optional arguments
+@function invert-color-white($color, $amount: 100%) {
+  @return mix(white, $color, $amount);
+}
+
+$blue-100: invert-color-white($blue, 30%);
+
+.bg-color-blue {
+  background-color: $blue-100;
+  padding: 2rem;
+}
+
+// abitrary arguments in function
+@function sum($numbers...) {
+  $sum: 0;
+
+  @each $number in $numbers {
+    $sum: $sum + $number;
+  }
+
+  @return $sum;
+}
+
+.large-padding{
+  padding: sum(40px, 20px,2px);
+}
+
+// passing abitrary arguments
+$width: 23px, 29px, 60px;
+.ban-min{
+  width: min($width...);
+}
+.ban-max{
+  width: max($width...);
+}
+
