@@ -1,0 +1,53 @@
+.color-primary {
+  background-color: #9999ff;
+  color: #000066;
+  font-weight: bold;
+  padding: 2rem;
+  border: 2px solid #6666ff;
+  border-radius: 5px;
+}
+
+.color-success {
+  background-color: #99cc99;
+  color: #003300;
+  font-weight: bold;
+  padding: 2rem;
+  border: 2px solid #66b366;
+  border-radius: 5px;
+}
+
+.color-danger {
+  background-color: #ff9999;
+  color: #660000;
+  font-weight: bold;
+  padding: 2rem;
+  border: 2px solid #ff6666;
+  border-radius: 5px;
+}
+
+.color-darkorange {
+  background-color: #ffd199;
+  color: #663800;
+  font-weight: bold;
+  padding: 2rem;
+  border: 2px solid #ffba66;
+  border-radius: 5px;
+}
+
+.color-warning {
+  background-color: #ffff99;
+  color: #666600;
+  font-weight: bold;
+  padding: 2rem;
+  border: 2px solid #ffff66;
+  border-radius: 5px;
+}
+
+.color-darkmagenta {
+  background-color: #d199d1;
+  color: #380038;
+  font-weight: bold;
+  padding: 2rem;
+  border: 2px solid #b966b9;
+  border-radius: 5px;
+}

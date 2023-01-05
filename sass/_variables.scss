@@ -1,0 +1,28 @@
+// sass-documentation-colors variable
+$blue: blue !default;
+$green: green !default;
+$red: red !default;
+$darkorange: darkorange !default;
+$yellow: yellow !default;
+$gray: gray !default;
+$darkmagenta: darkmagenta !default;
+//  colors
+$colors: (
+  "primary":$blue,
+  "success":$green,
+  "danger":$red,
+  "darkorange":$darkorange,
+  "warning":$yellow,
+  "darkmagenta":$darkmagenta
+);
+
+@each $color-name, $color-value in $colors{
+  .color-#{$color-name}{
+    background-color: mix(white, $color-value, 60%);
+    color: mix(black, $color-value, 60%);
+    font-weight: bold;
+    padding: 2rem;
+    border: 2px solid mix(white, $color-value, 40%);
+    border-radius: 5px;
+  }
+}
