@@ -43,18 +43,59 @@ nav ul {
 
 // mixin with content
 @mixin hover {
+  border: 2px solid mix(white, darkgreen, 40%);
+  padding: 3rem;
+
   &:not([disabled]):hover {
     @content;
   }
 }
 
 .description {
-  border: 2px solid mix(white, darkgreen, 40%);
-  padding: 3rem;
-
   @include hover {
     border-radius: 6px;
   }
 }
 
 
+// button style using mixin
+@mixin button($bg-color, $color, $outline-color) {
+  // box model
+  display: inline;
+  padding: 10px;
+  margin: 10px;
+  // borders
+  border: none;
+  border-radius: 5px;
+  // backgrounds
+  background-color: $bg-color;
+  // text
+  text-transform: capitalize;
+  font-size: 1rem;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: bolder;
+  // others (miscellaneous)
+  color: $color;
+
+  &:is(:hover, :focus){
+    outline: 3px solid $outline-color;
+    outline-offset: 0px;
+    cursor: pointer;
+  }
+}
+
+@each $button-color-name, $button-color-value in $colors{
+    .button-#{$button-color-name}{
+      @include button(mix(white,$button-color-value, 40%), white, mix(white, $button-color-value, 60%));
+    }
+    @if ($button-color-name == 'warning'){
+      .button-#{$button-color-name}{
+        @include button(mix(white,$button-color-value, 40%), #333, mix(black, $button-color-value, 10%));
+      }
+    }
+    @else if ($button-color-name == 'default'){
+      .button-#{$button-color-name}{
+        @include button(mix(white,$button-color-value, 40%), #333, mix(white, $button-color-value, 10%));
+      }
+    }
+  }
