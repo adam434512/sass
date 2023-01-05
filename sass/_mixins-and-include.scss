@@ -1,0 +1,60 @@
+/*----------  Mixins and includes  ----------*/
+@mixin reset-list {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+}
+
+;
+
+@mixin list {
+  @include reset-list;
+
+  li {
+    display: inline;
+
+    margin: {
+      left: -2px;
+      right: 2rem;
+    }
+  }
+}
+
+;
+
+nav ul {
+  @include list;
+}
+
+;
+
+// mixin with arguments
+// @mixin direction($property, $rlt-value, $ltr-value)
+// {
+//   #{$property}: $ltr-value;
+//   [dir="rtl"] &{
+//     #{$property}: $rlt-value;
+//   }
+// };
+
+// ul{
+//   @include direction(float, left, right);
+// }
+
+// mixin with content
+@mixin hover {
+  &:not([disabled]):hover {
+    @content;
+  }
+}
+
+.description {
+  border: 2px solid mix(white, darkgreen, 40%);
+  padding: 3rem;
+
+  @include hover {
+    border-radius: 6px;
+  }
+}
+
+
