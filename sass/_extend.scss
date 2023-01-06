@@ -1,0 +1,53 @@
+// function to tint color to whiten
+
+@function tint-color($color, $amount) {
+  @return mix(white, $color, $amount);
+}
+@function darken-color($color, $amount) {
+  @return mix(black, $color, $amount);
+}
+
+@each $bg-color-name, $bg-color-value in $colors{
+  .bg-#{$bg-color-name}{
+    background-color:tint-color($bg-color-value, 20%); ;
+  }
+}
+
+.error{
+  border: 1px #f00;
+  // background-color: #fdd;
+  padding: 1rem 1.6rem;
+  border-radius: 5px;
+
+  &-serious{
+    @extend .error;
+    border-width: 3px;
+  }
+}
+
+%button{
+  display: inline-block;
+  padding: 1rem 1.2rem;
+  margin: auto;
+  border: none;
+  border-radius: 5px;
+}
+
+.button{
+  @extend %button;
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+@each $button-color-name, $button-color-value in $colors{
+  .btn-#{$button-color-name}{
+
+    background-color: darken-color($button-color-value, 60%);
+    color: white;
+    &:is(:hover, :focus){
+      outline: 3px solid tint-color($button-color-value, 20%);
+      outline-offset: 0px;
+    }
+  }
+}

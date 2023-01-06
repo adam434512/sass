@@ -33,7 +33,55 @@
       <h2 class="text-capitalize color-success">variables</h2>
       <p>sass variables are variables defined and assigned the values which can be re-used throughout the stylesheet.
         variable make easier to change the value of the variables and also reduce repitition</p>
+    </div>
+    <!-- sass mixins -->
+    <div class="mixins container">
+      <h2 class="text-capitalize color-danger">mixins and include</h2>
+      <p>mixins allows a developer to write a style that can be re-use throughout the stylesheet. mixins are include in
+        the current context using the <em><b>@include</b></em> rule with the name of the mixin included.</p>
+      <nav class="color-darkmagenta">
+        <ul><a href="#">lorem</a></ul>
+        <ul><a href="#">lorem</a></ul>
+        <ul><a href="#">lorem</a></ul>
+        <ul><a href="#">lorem</a></ul>
+        <ul><a href="#">lorem</a></ul>
+      </nav>
+      <p class="description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, fugit. Similique ex velit
+        pariatur sunt dolorum, eveniet doloribus deleniti itaque architecto reiciendis obcaecati eligendi. Eaque
+        assumenda magni animi velit fugiat? Ullam in nobis possimus quae, sed eos optio illum exercitationem sunt
+        perspiciatis, sapiente, facilis accusantium. Necessitatibus exercitationem quam, at asperiores assumenda nam,
+        atque dolorem est possimus dicta, saepe quibusdam omnis.</p>
+      <!-- button sample with mixin -->
+      <button class="button-primary">primary button</button>
+      <button class="button-success">success button</button>
+      <button class="button-danger">danger button</button>
+      <button class="button-darkorange">darkorange button</button>
+      <button class="button-warning">warning button</button>
+      <button class="button-darkmagenta">darkmagenta button</button>
+      <button class="button-default">default button</button>
+    </div>
 
+    <!-- sass functions -->
+    <div class="sass-function bg-color-blue">
+      <h2 class="text-uppercase">sass functions</h2>
+      <p>functions allo a developer to define a complex operation, which can be re-used throughout the stylesheet.
+        functions make easy to abstract out common formulas and beahvaiors in a readable way</p>
+    </div>
+
+    <!-- sass extend rule -->
+    <div class="extend-r">
+      <h2 class="text-uppercase">sass extend @extend</h2>
+      <p>there is often a case when designing a page when one class should have all the style of another class as well
+        as its own specific styles. <span class="text-uppercase">@extend</span> allow style to be inherited from one
+        selector to another selector</p>
+      <h2 class="text-capitalize">extend example with errors box show</h2>
+      <div class="error error-serious bg-primary">
+        <h2>error alert</h2>
+        <p>this is wrong please check all field below and fill them in accordance with rules.</p>
+      </div>
+      <!-- .button using extended -->
+      <button class="button btn-success">button success</button>
+      <button class="button btn-primary">button primary</button>
     </div>
   </div>
 </body>
