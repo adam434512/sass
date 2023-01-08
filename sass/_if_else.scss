@@ -1,0 +1,58 @@
+@use "sass:math";
+
+// @if and @else
+@mixin site-theme($primary-theme: true) {
+  @if $primary-theme {
+    background-color: mix(black, $green, 50%);
+    color: $white;
+  }
+
+  @else {
+    background-color: $gray;
+    color: $black;
+  }
+}
+
+.theme-primary {
+  @include site-theme($primary-theme: 1);
+
+  &-dark {
+    @include site-theme($primary-theme: null);
+  }
+}
+
+// @if and @else if And @else
+@mixin borders-style($size, $direction, $color) {
+ $size: $size * 1px;
+
+  // width: 0px;
+  // height: 0px;
+  border-color: transparent;
+  border-style: solid;
+  border-width: math.div($size, 2);
+  border-radius: 5px;
+
+  @if $direction==left {
+    border-left-color: $color;
+  }
+
+  @else if $direction==top {
+    border-top-color: $color;
+  }
+
+  @else if $direction==right {
+    border-right-color: $color;
+  }
+
+  @else if $direction==bottom {
+    border-bottom-color: $color;
+  }
+
+  @else {
+    @error "Unknow direction #{$direction}. Direction should be left, top, right, or bottom";
+  }
+}
+
+.border-style{
+  @include borders-style(33,top , green);
+}

@@ -1,0 +1,6 @@
+@each $color-name,
+$color-value in $colors {
+  .color-#{$color-name} {
+    background-color: mix(white, $color-value, 60%);
+  }
+}

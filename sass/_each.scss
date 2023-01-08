@@ -1,0 +1,75 @@
+$utilities: ("padding":("prefix": "padding",
+    "value": ("default": 0rem,
+      "1": 1rem,
+      "2": 2rem,
+      "3": 3rem,
+      "4": 4rem,
+      "5": 5rem)),
+  "padding-top":("prefix": "pt",
+    "value": ("default": 0rem,
+      "1": 1rem,
+      "2": 2rem,
+      "3": 3rem,
+      "4": 4rem,
+      "5": 5rem)),
+  "padding-right":("prefix": "pr",
+    "value": ("default": 0rem,
+      "1": 1rem,
+      "2": 2rem,
+      "3": 3rem,
+      "4": 4rem,
+      "5": 5rem)),
+  "padding-bottom":("prefix": "pb",
+    "value": ("default": 0rem,
+      "1": 1rem,
+      "2": 2rem,
+      "3": 3rem,
+      "4": 4rem,
+      "5": 5rem)),
+  "padding-left":("prefix": "pl",
+    "value": ("default": 0rem,
+      "1": 1rem,
+      "2": 2rem,
+      "3": 3rem,
+      "4": 4rem,
+      "5": 5rem)),
+      "text-align": (
+        "prefix": "text-align",
+        "value": (
+          "center": center,
+          "justify": justify,
+          "left": left,
+          "right": right
+        )
+      ),
+      "text-transform": (
+        "prefix": "text",
+        "value": (
+          "lowercase": lowercase,
+          "capitalize": capitalize,
+          "uppercase": uppercase
+        )
+      )
+
+);
+
+@each $property,
+$map in $utilities {
+  $prefix: map-get($map, "prefix");
+  $value: map-get($map, "value");
+
+  @each $property-name,
+  $property-value in $value {
+    @if $property-name=="default" {
+      .#{$prefix} {
+        #{$property}: $property-value;
+      }
+    }
+
+    @else {
+      .#{$prefix}-#{$property-name} {
+        #{$property}: $property-value;
+      }
+    }
+  }
+}

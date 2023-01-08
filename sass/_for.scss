@@ -1,0 +1,82 @@
+@use "sass:math";
+
+$grid-columns: 12;
+
+// breakpoints
+$breakpoints: ("xs": 0px,
+  "sm": 688px,
+  "md": 768px,
+  "lg": 912px,
+  "xl": 1200px);
+
+@mixin xs {
+  @media (min-width: map-get($breakpoints, "xs")) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media (min-width: map-get($breakpoints, "sm")) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (min-width: map-get($breakpoints, "md")) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: map-get($breakpoints, "lg")) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: map-get($breakpoints, "xl")) {
+    @content;
+  }
+}
+
+@mixin xxl($bp: 0) {
+  @media (min-width: $bp) {
+    @content;
+  }
+}
+
+@mixin flex-layout($column-name) {
+  @for $i from 1 through 12 {
+    $column-width: $i * 100%;
+
+    .column-#{$column-name}-#{$i} {
+      box-sizing: border-box;
+      flex-grow: 0;
+      width: math.div($column-width, $grid-columns);
+    }
+  }
+}
+
+@include xs {
+  @include flex-layout(xs);
+}
+
+@include sm {
+  @include flex-layout(sm);
+}
+
+@include md {
+  @include flex-layout(md);
+}
+
+@include lg {
+  @include flex-layout(lg);
+}
+
+@include xl {
+  @include flex-layout(xl);
+}
+
+@include xxl(1200px) {
+  @include flex-layout(xxl);
+}

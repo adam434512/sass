@@ -6,30 +6,15 @@ $darkorange: darkorange !default;
 $yellow: yellow !default;
 $gray: gray !default;
 $darkmagenta: darkmagenta !default;
+$white: white !default;
+$black: black !default;
+
 //  colors
-$colors: (
-  "primary":$blue,
+$colors: ("primary":$blue,
   "success":$green,
   "danger":$red,
   "darkorange":$darkorange,
   "warning":$yellow,
-  "darkmagenta":$darkmagenta
-);
+  "darkmagenta":$darkmagenta);
 
-@each $color-name, $color-value in $colors{
-  .color-#{$color-name}{
-    background-color: mix(white, $color-value, 60%);
-  }
-}
-*, *::before, *::after{
-  box-sizing: border-box;
-}
-.container
-{
-  width: 100%;
-  max-width: 1100px;
-  padding: 0px 30px;
-  margin: 0px auto;
-  overflow: auto;
-  box-sizing: border-box;
-}
+
