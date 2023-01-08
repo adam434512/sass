@@ -18,3 +18,18 @@ body {
   margin: 0px auto;
   box-sizing: border-box;
 }
+
+// font-size
+$font-sizes: (
+  "xs": $font-size-xs,
+  "sm": $base-font-size,
+  "md": $font-size-md,
+  "lg": $font-size-lg,
+  "xl": $font-size-xl,
+  "xxl": $font-size-xxl);
+
+  @each $font-size-name, $font-size-value in $font-sizes{
+    .font-size-#{$font-size-name}{
+      font-size: $font-size-value;
+    }
+  }

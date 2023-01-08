@@ -10,11 +10,18 @@ $white: white !default;
 $black: black !default;
 
 //  colors
-$colors: ("primary":$blue,
+$colors: (
+  "primary":$blue,
   "success":$green,
   "danger":$red,
   "darkorange":$darkorange,
   "warning":$yellow,
   "darkmagenta":$darkmagenta);
 
-
+// font size
+$base-font-size: 1rem;
+$font-size-xs: $base-font-size * .75;
+$font-size-md: $base-font-size * 1.5;
+$font-size-lg: $base-font-size * 2;
+$font-size-xl: $base-font-size * 3;
+$font-size-xxl: $base-font-size * 4;
