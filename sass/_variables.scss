@@ -16,7 +16,13 @@ $colors: (
   "danger":$red,
   "darkorange":$darkorange,
   "warning":$yellow,
+<<<<<<< HEAD
   "darkmagenta":$darkmagenta);
+=======
+  "default": $gray,
+  "darkmagenta":$darkmagenta
+);
+>>>>>>> mixins-and-includes
 
 // font size
 $base-font-size: 1rem;
