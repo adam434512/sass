@@ -1,0 +1,65 @@
+@use "sass:math";
+
+/*----------  SASS: math function  ----------*/
+// rounding number up to the next highest whole number
+$base-padding: 1rem;
+$base-margin: 2rem;
+
+@for $i from 1 through 9 {
+  .padding-s-#{$i} {
+    padding: math.div($base-padding, $i);
+  }
+};
+
+@for $margin from 1 through 10 {
+  .mg-s-#{$margin} {
+    margin: math.div($base-margin, $margin);
+  }
+};
+
+$lists:
+1px,
+2px,
+3px,
+4px,
+5px,
+6px,
+7px,
+8px;
+$no: 20px;
+
+@each $spacing in $lists {
+  .spacing-#{$spacing} {
+    margin: math.max($spacing, $no);
+  }
+
+}
+
+// @debug comparable($number1: 10mm, $number2:10cm);
+// check if the number has unit
+@debug math.is-unitless(100);
+@debug math.is-unitless(100rem);
+
+// check unit of a number
+@debug math.unit(20em);
+@debug math.unit(20rem);
+@debug math.unit(20px);
+@debug math.unit(20mm);
+@debug math.unit(20inch);
+
+// division
+@debug math.div(100rem, 10);
+
+// percentage
+@debug math.percentage(0);
+@debug math.percentage(1.0);
+@debug math.percentage(0.1);
+@debug math.percentage(0.2);
+@debug math.percentage(0.3);
+@debug math.percentage(0.4);
+@debug math.percentage(0.5);
+@debug math.percentage(0.6);
+@debug math.percentage(0.7);
+@debug math.percentage(0.8);
+@debug math.percentage(0.9);
+@debug math.percentage(1);

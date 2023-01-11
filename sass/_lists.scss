@@ -1,0 +1,24 @@
+/*----------  SASS: lists  ----------*/
+@use "sass:list";
+$list-one: 1px,
+2px,
+3px,
+4px,
+5px,
+6px;
+$list-two: 7px,
+8px,
+9px,
+10px,
+11px,
+12px;
+$main-list: list.join($list-one, $list-two);
+
+
+@each $number in $main-list {
+  .spacing-#{$number} {
+    padding: $number;
+    margin: $number;
+  }
+  
+}

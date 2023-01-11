@@ -1,0 +1,87 @@
+@use "sass:map";
+/*----------  SASS: map  ----------*/
+$map1: ("1": 1rem, "2": 2rem, "3": 3rem, "4": 4rem, "5": 5rem);
+
+@each $map-name,
+$map-value in $map1 {
+  .p-f-m-#{$map-name} {
+    padding: $map-value;
+  }
+}
+
+// nested map
+$nested-map-1: (
+  "width": (
+    "easy": 100,
+    "normal": 200,
+    "wider": 300,
+    "long": 400,
+    "longer": 500,
+  ),
+
+  "font-size":(
+    "ex": 1rem,
+    "sm": 2rem,
+    "md": 3rem,
+    "lgd": 4rem,
+    "xl": 5rem,
+    "xxl": 6rem));
+
+@each $property,
+$map in $nested-map-1 {
+
+  @each $key,
+  $val in $map {
+    .#{$property}-#{$key} {
+      #{$property}: $val;
+    }
+  }
+
+};
+
+// map-merge
+$map-1: (
+  "font-weight":(
+    "easy": 100,
+    "normal": 300
+    )
+  );
+$map-2: (
+  "font-weight":(
+    "bold": 400,
+    "bolder": 900
+    )
+
+);
+$merged-map: map.deep-merge($map-1, $map-2);
+
+@each $property, $map in $merged-map{
+
+  @each $key, $val in $map{
+    .#{$property}-#{$key}{
+      #{$property}: $val;
+    }
+  }
+
+}
+
+$nested-map: (
+  "fonts": (
+    "helvatica": (
+      "normal": 100,
+      "regular": 300,
+    )
+  )
+);
+$nested-map-m-1: (
+  "fonts": (
+    "trebuchet": (
+      "bold": 400,
+      "bolder": 700,
+      "extra-bold": 900
+    )
+  )
+);
+
+// @debug map.deep-merge($nested-map, $nested-map-m-1);
+

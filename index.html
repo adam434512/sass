@@ -16,6 +16,12 @@
 <body>
   <!-- sass introduction -->
   <div class="sass-intro container">
+    <div class="banner theme-primary padding-5">
+      <div class="container">
+        <h2 class="text-uppercase font-size-lg">introduction to advanced style and css preprocessors (sass & smacss).
+        </h2>
+      </div>
+    </div>
     <h2 class="text-uppercase text-primary-8">sass introduction</h2>
     <p><span class="text-uppercase">sass</span> stands for <span class="text-capitalize">syntactically awesome
         stylsheets</span></p>
@@ -25,7 +31,7 @@
     <p>sass support two types of syntax. so its up to you and your team to choose up</p>
     <ul>
       <li>scss syntax: which contains full set of css syntax with few exceptions.</li>
-      <li>indented synstanx: its the original sass syntanx.</li>
+      <li>indentedd synstanx: its the original sass syntanx.</li>
     </ul>
 
     <!-- sass variable -->
@@ -83,7 +89,102 @@
       <button class="button btn-success">button success</button>
       <button class="button btn-primary">button primary</button>
     </div>
-  </div>
+
+    <!-- sass error function -->
+    <div class="error">
+      <h2 class="text-uppercase sidebar">sass @error rule</h2>
+      <p>when writing a mixins and functions that accepts arguments developer wants to make sure those arguments have
+        type and formats your api expects. if not the developer need to be notified and the respective mixins or
+        function needs to stop running</p>
+    </div>
+
+    <div class="flow-control">
+      <h2 class="text-uppercase"> sass flow control </h2>
+      <p>sass provides a number of at-rules that make it possible to control whether style emit, or emmit them multiple
+        time with small variations. Flow control can also be used inside mixin and function to write small algorithim to
+        make writting your sass easier. sass has four flow control rules described as follows.</p>
+      <!-- @if and @else -->
+      <div class="if-else border-style">
+        <h2 class="text-lowercase">@if and @else</h2>
+        <p>control flow that control weather or not its block will be evealuated</p>
+      </div>
+
+      <!-- @each -->
+      <div class="each padding-3 bg-success">
+        <h2 class="text-lowercase">@each</h2>
+        <p>@each rule make it easier to emit or evaluate code for each element in a list or for each value in a map. it
+          work great for repetitive style that only has few variations between them. The block is evaluated for each
+          element of the list in turn, which is assigned to the given variable name</p>
+      </div>
+
+      <!-- @while
+      <div class="while pt-3 pr-3 pb-3 pl-3 ">
+        <h2 class="text-capitalize">@each</h2>
+        <p></p>
+      </div>
+    </div> -->
+
+      <!-- sass values -->
+      <div class="values">
+        <h2 class="text-uppercase font-size-lg">sass values</h2>
+        <p>sass supports number of value types, most of which comes straight from <span
+            class="text-uppercase">css</span> Every expression produce a value, variables hold values. Most values comes
+          straight from css are as follows</p>
+        <ul>
+          <li>numbers. which may or may have no units eg. 17px or 17</li>
+          <li>string. which may or may have no quotes </li>
+          <li>colors. which can be reffered by their names, hex values, rgb and rgba values or hsl and they can returned
+            from the function as well.</li>
+          <li>list of values. which may be separated by comma or space and which may be enclosed in square brackets or
+            no brackets at all.</li>
+          <li>booleat value. true and false.</li>
+          <li>singleton value null</li>
+          <li>maps. which associates values with keys</li>
+          <li>function reference. returned by get-function() and call by call().</li>
+        </ul>
+
+        <!-- font-sizes -->
+        <div class="fs">
+          <div class="font-size-xxl">font size sm</div>
+          <div class="font-size-xl">font size sm</div>
+          <div class="font-size-lg">font size md</div>
+          <div class="font-size-md">font size lg</div>
+          <div class="font-size-sm">font size xl</div>
+          <div class="font-size-xs">font size xxl</div>
+        </div>
+
+        <!-- built-in modules -->
+        <div class="b-modules">
+          <h2 class="text-uppercase font-size-xl">sass built-in module</h2>
+          <p><span class="text-uppercase">sass</span> provides many built-in modules which contain useful functions (
+            and the ocasional mixin). These module can be loaded with @use rule like any other user defined stylesheet,
+            and their function can be called like any other module member. All in built module begin with sass: to
+            indicate that they are part of <span class="text-uppercase">sass</span> it self</p>
+          <p>sass support the following modules</p>
+          <ul class="color-mix padding-3">
+            <li class="pt-1"><b>sass:math.</b> provides a function that operate on numbers</li>
+            <li class="pt-1"><b>sass:string.</b> module make it easier to combine, search, or split apart string.</li>
+            <li class="pt-1"><b>sass:color.</b> generates new color based on the existing ones. making it easier to
+              build color themes.</li>
+            <li class="pt-1"><b>sass:list.</b> allows a developer to access and modify values in lists.</li>
+            <li class="pt-1"><b>sass:map.</b> enable developer to look up the value associated with the key in a map.
+            </li>
+            <li class="pt-1"><b>sass:selector.</b> allow a developer to access a powerful sass selector engine.</li>
+            <li class="pt-1"><b>sass:meta.</b> expose the details of sass inner working.</li>
+          </ul>
+
+          <!-- sass map -->
+          <div class="map">
+            <h2 class="text-capitalize">sass: map</h2>
+            <p>sass libraries and design systems tend to share and overides configurations presented as nested maps (map
+              that contains maps that contain maps). To help developer work with nested maps, some function support deep
+              operation</p>
+          </div>
+          
+        </div>
+      </div>
+
+    </div>
 </body>
 
 </html>

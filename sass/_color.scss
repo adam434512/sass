@@ -1,0 +1,27 @@
+@use "sass:color";
+// color adjust
+.color-greener{
+  color: color.adjust($green, $red: 5, $blue: 55);
+}
+
+// color darkness
+.color-dark{
+  color: color.blackness(black);
+}
+
+// color compliments
+.color-compliment{
+  color: mix(rgb(255, 255, 255), (color.complement(blue)), 50%);
+}
+
+// darken color function
+.color-darken{
+  color: darken($yellow, 20%);
+}
+
+// color mix
+.color-mix{
+  background-color: mix(green, blue, $weight: 60%);
+  color:rgb(255, 255, 255);
+}
+ 
